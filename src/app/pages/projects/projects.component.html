@@ -1,0 +1,73 @@
+<div class="projects-container">
+  <div class="container">
+    <div class="section-header" @fadeIn>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-intro" @fadeIn>
+      <p>
+        A selection of my recent projects. These showcase my expertise in .NET Core, 
+        database design, cloud architecture, and frontend development.
+      </p>
+    </div>
+
+    <div class="featured-projects">
+      <h3 class="sub-heading" @fadeIn>Featured Projects</h3>
+      
+      <div class="featured-grid" @staggerProjects>
+        <div class="project-card featured" *ngFor="let project of featuredProjects" [id]="project.id">
+          <div class="project-image">
+            <img [src]="project.imageUrl" [alt]="project.title + ' screenshot'">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="project-link">
+                  <i class="fa fa-github"></i>
+                </a>
+                <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="project-link">
+                  <i class="fa fa-external-link"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tech-list">
+              <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="other-projects">
+      <h3 class="sub-heading" @fadeIn>Other Noteworthy Projects</h3>
+      
+      <div class="projects-grid" @staggerProjects>
+        <div class="project-card" *ngFor="let project of otherProjects" [id]="project.id">
+          <div class="project-image">
+            <img [src]="project.imageUrl" [alt]="project.title + ' screenshot'">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" class="project-link">
+                  <i class="fa fa-github"></i>
+                </a>
+                <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" class="project-link">
+                  <i class="fa fa-external-link"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tech-list">
+              <span class="tech-tag" *ngFor="let tech of project.technologies">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="animated-text-wrapper">
+  <span class="static-text" *ngIf="text">{{ text }}</span>
+  <span class="dynamic-text">
+    {{ currentText }}<span class="cursor" *ngIf="cursor && !isWaiting">|</span>
+  </span>
+</div>

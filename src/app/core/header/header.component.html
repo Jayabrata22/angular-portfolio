@@ -1,0 +1,68 @@
+<header [@scrollAnimation]="scrollState" class="header">
+  <div class="container">
+    <div class="header-content">
+      <a routerLink="/" class="logo">
+        <span class="logo-text">JD</span>
+      </a>
+      
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><span class="nav-number"></span>Home</a></li>
+          <li><a routerLink="/about" routerLinkActive="active"><span class="nav-number"></span>About</a></li>
+          <li><a routerLink="/skills" routerLinkActive="active"><span class="nav-number"></span>Skills</a></li>
+          <li><a routerLink="/projects" routerLinkActive="active"><span class="nav-number"></span>Projects</a></li>
+          <li><a routerLink="/experience" routerLinkActive="active"><span class="nav-number"></span>Experience</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active"><span class="nav-number"></span>Contact</a></li>
+        </ul>
+        <a href="/assets/resume.pdf" target="_blank" class="resume-button mat-button-primary">Resume</a>
+      </nav>
+      
+      <button class="menu-button" (click)="toggleMenu()" [class.open]="isMenuOpen" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="mobile-nav" [class.open]="isMenuOpen">
+    <div class="mobile-nav-overlay" (click)="closeMenu()"></div>
+    <div class="mobile-nav-content">
+      <ul class="mobile-nav-links">
+        <li>
+          <a routerLink="/" (click)="closeMenu()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <span class="nav-number"></span>Home
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about" (click)="closeMenu()" routerLinkActive="active">
+            <span class="nav-number"></span>About
+          </a>
+        </li>
+        <li>
+          <a routerLink="/skills" (click)="closeMenu()" routerLinkActive="active">
+            <span class="nav-number"></span>Skills
+          </a>
+        </li>
+        <li>
+          <a routerLink="/projects" (click)="closeMenu()" routerLinkActive="active">
+            <span class="nav-number"></span>Projects
+          </a>
+        </li>
+        <li>
+          <a routerLink="/experience" (click)="closeMenu()" routerLinkActive="active">
+            <span class="nav-number"></span>Experience
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" (click)="closeMenu()" routerLinkActive="active">
+            <span class="nav-number"></span>Contact
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-resume">
+        <a href="/assets/resume.pdf" target="_blank" class="resume-button mat-button-primary">Resume</a>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,92 @@
+<div class="experience-container">
+  <div class="container">
+    <div class="section-header" @fadeIn>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="experience-intro" @fadeIn>
+      <p>
+        My professional journey in .NET development spanning over 3 years. 
+        Here's where I've worked and the impact I've made.
+      </p>
+    </div>
+
+    <div class="experience-content">
+      <div class="tabs-container" @fadeIn>
+        <div class="tabs-list">
+          <button 
+            *ngFor="let exp of experiences; let i = index" 
+            [class.active]="activeTab === i"
+            (click)="setActiveTab(i)"
+            class="tab-button">
+            {{ exp.company }}
+          </button>
+        </div>
+        <div class="tab-content">
+          <div class="job-info" *ngIf="experiences[activeTab]" @fadeIn>
+            <h3 class="job-title">
+              {{ experiences[activeTab].position }} 
+              <span class="company">@ {{ experiences[activeTab].company }}</span>
+            </h3>
+            <div class="job-period">{{ experiences[activeTab].period }}</div>
+            
+            <ul class="job-description" @listAnimation>
+              <li *ngFor="let item of experiences[activeTab].description">
+                {{ item }}
+              </li>
+            </ul>
+            
+            <div class="tech-used">
+              <h4>Technologies used:</h4>
+              <div class="tech-tags">
+                <span class="tech-tag" *ngFor="let tech of experiences[activeTab].technologies">{{ tech }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="education-section" @fadeIn>
+        <h3 class="education-title">Education</h3>
+        
+        <div class="education-item">
+          <div class="edu-period">2017 - 2021</div>
+          <div class="edu-content">
+            <h4 class="degree">Bachelor of Technology in Mechanical Engineering(CGPA: 8.16)</h4>
+            <div class="institution">West Bengal University of Technology</div>
+            <p class="edu-description">
+              Graduated with Mechanical engineering Degree.<br/>
+              Capstone project: Developed a Dorbell Security product with CSE team collaboration.
+            </p>
+          </div>
+        </div>
+        
+
+        <div class="education-section" @fadeIn>
+          <h3 class="education-title">Certifications</h3>
+           <div class="education-item">
+          <div class="edu-period">2024</div>
+          <div class="edu-content">
+            <h4 class="degree">Developing ASP.NET MVC Web Applications</h4>
+            <div class="institution">Udemy</div>
+            <p class="edu-description">
+              Certification validating expertise in designing, building, testing, and maintaining  applications and services using ASP.NET MVC.
+            </p>
+          </div>
+        </div>
+         <div class="education-item">
+          <div class="edu-period">2024</div>
+          <div class="edu-content">
+            <h4 class="degree">Introduction to Generative AI </h4>
+            <div class="institution">Coursera</div>
+            <p class="edu-description">
+              Certification demonstrating understanding Generative AI  and ability to apply it effectively in software development projects.
+            </p>
+          </div>
+        </div>
+        </div>      
+      </div>
+    </div>
+  </div>
+</div>

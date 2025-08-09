@@ -1,0 +1,30 @@
+<div class="home-container">
+  <app-particles-background></app-particles-background>
+
+  <div class="container">
+    <div class="content">
+      <div class="intro" @fadeIn>
+        <p class="greeting">Hi, my name is</p>
+        <h1 class="name">Jayabrata Das</h1>
+        <h2 class="tagline">I build things for the web.</h2>
+        <app-animated-text [items]="roles"></app-animated-text>
+        <p class="description">
+          I'm a seasoned full-stack developer specializing in .NET Core and modern web technologies. With a passion for crafting efficient, scalable, and user-friendly applications, I bring ideas to life through clean code and thoughtful architecture.
+        </p>
+        <div class="cta-buttons">
+          <button class="mat-button-primary" (click)="navigateToProjects()">View My Work</button>
+          <button class="mat-button-outlined" (click)="navigateToContact()">Get In Touch</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-down-indicator">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <div>
+      <span class="arrow-down"></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="skills-container">
+  <div class="container">
+    <div class="section-header" @fadeIn>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-intro" @fadeIn>
+      <p>
+        I've spent several years honing my expertise across the full .NET development stack. 
+        Below is a visual representation of my technical skills and proficiency levels.
+      </p>
+    </div>
+
+    <div class="skill-categories" @staggerList>
+      <div class="skill-category" *ngFor="let category of skillCategories">
+        <h3 class="category-title">{{ category.name }}</h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of category.skills">
+            <div class="skill-info">
+              <div class="skill-name">{{ skill.name }}</div>
+              <div class="skill-percentage">{{ skill.percentage }}%</div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.percentage" [style.backgroundColor]="skill.color" @barAnimation></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="other-tech" @fadeIn>
+      <h3>Other Technologies & Tools</h3>
+      <div class="tech-grid">
+        <div class="tech-item">Visual Studio</div>
+        <div class="tech-item">VS Code</div>
+        <div class="tech-item">LINQ</div>
+        <div class="tech-item">SignalR</div>
+        <div class="tech-item">RabbitMQ</div>
+        <div class="tech-item">Redis</div>
+        <div class="tech-item">Swagger</div>
+        <div class="tech-item">PowerShell</div>
+        <div class="tech-item">NUnit</div>
+        <div class="tech-item">xUnit</div>
+        <div class="tech-item">Moq</div>
+        <div class="tech-item">Postman</div>
+        <div class="tech-item">SASS/SCSS</div>
+        <div class="tech-item">Webpack</div>
+        <div class="tech-item">npm/yarn</div>
+        <div class="tech-item">JSON/XML</div>
+      </div>
+    </div>
+  </div>
+</div>
