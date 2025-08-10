@@ -1,3 +1,47 @@
+// Global mobile responsive styles for all pages
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .section-header {
+    margin-bottom: 30px;
+    .section-title {
+      font-size: 24px;
+    }
+    .section-line {
+      width: 120px;
+    }
+  }
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contact-intro {
+    margin-bottom: 20px;
+    p {
+      font-size: 15px;
+    }
+  }
+  .contact-form-box {
+    padding: 1rem;
+  }
+  .contact-details {
+    .contact-item {
+      flex-direction: column;
+      align-items: flex-start;
+      .contact-icon {
+        margin-bottom: 8px;
+      }
+    }
+    .social-links {
+      margin-top: 20px;
+      .social-icons {
+        gap: 8px;
+      }
+    }
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -69,11 +113,7 @@
           transition: var(--transition);
           position: relative;
 
-          .nav-number {
-            color: var(--primary);
-            margin-right: 5px;
-            font-weight: 400;
-          }
+          // .nav-number removed
 
           &:hover {
             color: var(--primary);
@@ -222,11 +262,7 @@
       font-family: 'Montserrat', monospace;
       transition: var(--transition);
 
-      .nav-number {
-        display: block;
-        color: var(--primary);
-        margin-bottom: 5px;
-      }
+  // .nav-number removed
 
       &:hover,
       &.active {
@@ -256,8 +292,44 @@
 
 @media (max-width: 768px) {
   .header {
+    height: 60px;
     .header-content {
-      padding: 0 25px;
+      padding: 0 10px;
+    }
+    .logo {
+      font-size: 24px;
+    }
+    .menu-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 30px;
+      height: 24px;
+      position: relative;
+      z-index: 11;
+    }
+  }
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-nav {
+    .mobile-nav-content {
+      width: 100vw;
+      padding: 80px 10px 20px 10px;
+      align-items: flex-start;
+    }
+    .mobile-nav-links {
+      li {
+        margin: 16px 0;
+      }
+      a {
+        font-size: 18px;
+        padding: 8px 0;
+      }
+    }
+    .mobile-resume {
+      margin-top: 24px;
     }
   }
 }
